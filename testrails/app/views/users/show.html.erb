@@ -1,4 +1,9 @@
 <h1>My Profile</h1>
+<p>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+</p>
 <h3>name</h3>
 <%= @user.name %>
 <h3>age</h3>
