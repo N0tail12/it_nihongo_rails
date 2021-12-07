@@ -12,6 +12,7 @@
   <body>
       <%= link_to "home", "/" %>
     <% if user_signed_in? %>
+      <p>Hello、<%= link_to current_user.email, users_show_path %></p>
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
       <p>Hello <%= current_user.email %></p>
     <% else %>
