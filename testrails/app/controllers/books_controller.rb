@@ -26,7 +26,8 @@ class BooksController < ApplicationController
     @book.image.attach(book_params[:image])
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
+          url = "/books" + @book_review.book_id.to_s
+        format.html { redirect_to url, notice: "Book was successfully created." }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new, status: :unprocessable_entity }
